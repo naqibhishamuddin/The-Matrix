@@ -1,24 +1,15 @@
 import React from 'react';
-import {Text, ScrollView, ActivityIndicator} from 'react-native';
+import {Text, ScrollView} from 'react-native';
 import {Screen, Matrix, Button} from 'components';
 import {styles} from './styles';
 
 export const MatrixInput = props => {
-  const {
-    onPressCalculate,
-    onChangeText,
-    loading,
-    row,
-    column,
-    rowInput,
-    onChange,
-  } = props;
+  const {onPressCalculate, onChangeText, row, column, rowInput} = props;
 
   let i;
   const steps = [];
-  let cast;
 
-  for (i = 0; i <= row; i++) {
+  for (i = 0; i < row; i++) {
     steps.push(
       <Matrix
         onChangeText={onChangeText}
@@ -31,13 +22,6 @@ export const MatrixInput = props => {
     );
   }
 
-  if (loading) {
-    return (
-      <Screen>
-        <ActivityIndicator size="large" color="green" />
-      </Screen>
-    );
-  }
   return (
     <ScrollView style={styles.scrollview} showsVerticalScrollIndicator={false}>
       <Screen style={styles.container}>

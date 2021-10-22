@@ -28,13 +28,11 @@ export const Home = props => {
       />
       <Text style={styles.header}>Hello there,</Text>
       <Text style={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-        scelerisque vehicula dolor, ut ultrices arcu feugiat ac. Aliquam tempor,
-        ipsum at euismod facilisis, turpis magna viverra metus, ut facilisis leo
-        ex sit amet nunc. Donec nec diam id dui scelerisque sagittis.
-        Suspendisse lobortis, leo nec scelerisque tristique, arcu libero
-        pulvinar augue, ut venenatis velit orci sit amet orci. Aenean tristique
-        vehicula est ac rhoncus. Sed vitae velit nulla. Nam a lorem ac nisl
+        Matrix is a rectangular array or table of numbers, symbols, or
+        expressions, arranged in rows and columns, which is used to represent a
+        mathematical object or a property of such an object. This application
+        will allow you to calculate the largest region of the matrix by few
+        clicks away.
       </Text>
       <Button
         style={styles.button}

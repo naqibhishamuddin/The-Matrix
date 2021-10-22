@@ -9,8 +9,7 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f0f0f0',
     width: wp(90),
-    height: hp(6),
-    paddingTop: hp(1),
+    paddingVertical: hp(2),
     borderRadius: hp(1.2),
     flexDirection: 'row',
     paddingHorizontal: wp(4),
@@ -29,8 +28,6 @@ export const styles = StyleSheet.create({
   },
   inputContainer: {marginLeft: wp(4)},
   textInput: {
-    flex: 1,
     fontSize: font.xs,
-    marginBottom: hp(1),
   },
 });

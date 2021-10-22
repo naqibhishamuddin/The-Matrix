@@ -4,18 +4,14 @@ import {MatrixInput} from './component';
 export const MatrixInputScreen = ({navigation, route}) => {
   const {row, column} = route?.params;
   const [rowInput, setRowInput] = useState([]);
-  const [loading, setIsLoading] = useState(false);
   let count;
-  const calculateRegion = () => {};
 
   const onPressCalculate = () => {
-    setIsLoading(true);
     sanitizeArray();
   };
 
   const sanitizeArray = () => {
     /** BEFORE PROCEED TO CALCULATION MAKE SURE IS CLEAN FROM UNDEFINED & NULL VALUE & IN CORRECT FORMAT */
-
     let sanitizedArray = [];
 
     /** Remove undefined and null value if exists */
@@ -24,14 +20,15 @@ export const MatrixInputScreen = ({navigation, route}) => {
     let i;
 
     /** SPLIT AND ENSURE THE NUMBER INSIDE ARRAY IS NUMBER TYPE NOT IN STRING TYPE */
-    for (i = 0; i <= row; i++) {
+    for (i = 0; i < row; i++) {
       let rowValue = a[i];
       sanitizedArray.push(rowValue.split('').map(Number));
     }
 
-    //setRowInput(sanitizeArray);
+    /** PASS THE SANITIZED ARRAY FOR CALCULATION*/
     visitArray(sanitizedArray);
   };
+
   const isSafe = (sanitizedArray, rowie, colie, visited) => {
     // row number is in range, column number is in
     // range and value is 1 and not yet visited
@@ -47,7 +44,6 @@ export const MatrixInputScreen = ({navigation, route}) => {
 
   const DFS = (sanitizedArray, rowie, colie, visited) => {
     // These arrays are used to get row and column
-    // numbers of 8 neighbours of a given cell
     let rowNbr = [-1, -1, -1, 0, 0, 1, 1, 1];
     let colNbr = [-1, 0, 1, -1, 1, -1, 0, 1];
 
@@ -93,7 +89,9 @@ export const MatrixInputScreen = ({navigation, route}) => {
         }
       }
     }
-    console.log('Result is 🚀 : ', result);
+
+    const newResult = result;
+    navigation.navigate('MatrixResult', {result: newResult});
   };
 
   const onChangeText = matrixNumber => {
@@ -105,7 +103,6 @@ export const MatrixInputScreen = ({navigation, route}) => {
   const props = {
     onPressCalculate,
     onChangeText,
-    loading,
     row,
     column,
     rowInput,

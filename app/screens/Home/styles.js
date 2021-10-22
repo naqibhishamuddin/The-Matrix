@@ -17,11 +17,11 @@ export const styles = StyleSheet.create({
   header: {
     fontSize: font.xxl,
     fontWeight: '500',
-    marginBottom: hp(2),
-    marginTop: hp(15),
+    marginBottom: hp(4),
+    marginTop: hp(20),
   },
   description: {
     color: color.lightGray,
-    lineHeight: hp(2.5),
+    lineHeight: hp(3),
   },
 });
