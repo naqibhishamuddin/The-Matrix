@@ -29,35 +29,35 @@ export const MatrixInputScreen = ({navigation, route}) => {
     visitArray(sanitizedArray);
   };
 
-  const isSafe = (sanitizedArray, rowie, colie, visited) => {
+  const isSafe = (sanitizedArray, rows, columns, visited) => {
     // row number is in range, column number is in
     // range and value is 1 and not yet visited
     return (
-      rowie >= 0 &&
-      rowie < row &&
-      colie >= 0 &&
-      colie < row &&
-      sanitizedArray[rowie][colie] === 1 &&
-      !visited[rowie][colie]
+      rows >= 0 &&
+      rows < row &&
+      columns >= 0 &&
+      columns < row &&
+      sanitizedArray[rows][columns] === 1 &&
+      !visited[rows][columns]
     );
   };
 
-  const DFS = (sanitizedArray, rowie, colie, visited) => {
+  const DFS = (sanitizedArray, rows, columns, visited) => {
     // These arrays are used to get row and column
     let rowNbr = [-1, -1, -1, 0, 0, 1, 1, 1];
     let colNbr = [-1, 0, 1, -1, 1, -1, 0, 1];
 
     // Mark this cell as visited
-    visited[rowie][colie] = true;
+    visited[rows][columns] = true;
 
     // Recur for all connected neighbours
     for (let k = 0; k < 8; k++) {
       if (
-        isSafe(sanitizedArray, rowie + rowNbr[k], colie + colNbr[k], visited)
+        isSafe(sanitizedArray, rows + rowNbr[k], columns + colNbr[k], visited)
       ) {
         // increment region length by one
         count++;
-        DFS(sanitizedArray, rowie + rowNbr[k], colie + colNbr[k], visited);
+        DFS(sanitizedArray, rows + rowNbr[k], columns + colNbr[k], visited);
       }
     }
   };
