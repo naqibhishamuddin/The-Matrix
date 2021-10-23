@@ -27,9 +27,10 @@ export const MatrixInput = props => {
       <Screen style={styles.container}>
         <Text style={styles.title}>Matrix Input</Text>
         <Text style={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          scelerisque vehicula dolor, ut ultrices arcu feugiat ac. Aliquam
-          tempor,
+          Please enter the number for your matrix row. Be advised that the
+          number must be between 1 and 0. To prevent any errors and inaccurate
+          result, the number entered must be match with the number of columns.
+          E.g number of column is 4 (1010)
         </Text>
         {steps}
         <Button
