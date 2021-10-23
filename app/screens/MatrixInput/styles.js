@@ -26,5 +26,6 @@ export const styles = StyleSheet.create({
     color: color.lightGray,
     marginTop: hp(2),
     marginBottom: hp(5),
+    lineHeight: hp(3),
   },
 });
