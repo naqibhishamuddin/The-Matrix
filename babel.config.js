@@ -17,8 +17,6 @@ module.exports = {
         alias: {
           components: './app/components',
           screens: './app/screens',
-          assets: './assets',
-          utils: './app/utils',
           misc: './app/misc',
         },
       },
